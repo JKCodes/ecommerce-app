@@ -7,6 +7,10 @@ import {
 } from 'react-router-dom'
 import { StyleSheet, css } from 'aphrodite';
 
+import Home from '../views/Home';
+import Signup from '../views/Signup';
+import NotFound from '../views/NotFound';
+
 const styles = StyleSheet.create({
   navbar: {
     width: '100%',
@@ -24,10 +28,6 @@ const styles = StyleSheet.create({
     }
   }
 })
-
-const Home = () => <div>Home</div>
-const Signup = () => <form className="signup_form"></form>
-const NotFound = () => <div>NotFound</div>
 
 class App extends Component {
   render() {

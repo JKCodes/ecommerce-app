@@ -5,9 +5,9 @@
 
   <testsuite name="auth-flow"
     errors="0" failures="0" hostname="" id="" package="auth-flow" skipped="0"
-    tests="3" time="2.923" timestamp="Mon, 31 Jul 2017 21:57:14 GMT">
+    tests="3" time="5.340" timestamp="Mon, 31 Jul 2017 23:30:50 GMT">
   
-    <testcase name="get to signup page" classname="auth-flow" time="2.832" assertions="3">
+    <testcase name="get to signup page" classname="auth-flow" time="5.235" assertions="3">
 
     
 
@@ -19,7 +19,7 @@
     <testcase name="signup user and redirect to cart" classname="auth-flow" time="0.002000" assertions="0">
     </testcase>
   
-    <testcase name="close" classname="auth-flow" time="0.08900" assertions="0">
+    <testcase name="close" classname="auth-flow" time="0.1030" assertions="0">
     </testcase>
   
 
