@@ -4,12 +4,13 @@ module.exports = {
     client
       .url(client.launchUrl)
       .waitForElementVisible('.navbar', 1000)
-      .click('a[href]="/signup"')
+      .click('a[href="/signup')
 
-    client.assert.urlContains('signup')
+    client.assert.urlContains('signup');
+    client.assert.cssClassPresent("#form", "signup_form");
   },
 
-  'signup user and redirect to cart': (clinet) => {
+  'signup user and redirect to cart': (client) => {
 
   }
 }
