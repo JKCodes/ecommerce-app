@@ -1,18 +1,27 @@
 module.exports = {
 
-  'get to signup page': (client) => {
-    client
-      .url(client.launchUrl)
+  'get to signup page': (browser) => {
+    browser
+      .url(browser.launchUrl)
       .waitForElementVisible('.navbar', 1000)
       .click('a[href="/signup')
 
-    client.assert.urlContains('signup');
-    client.assert.cssClassPresent("form", "signup_form");
+    browser.assert.urlContains('signup');
+    browser.assert.cssClassPresent("form", "signup_form");
   },
 
-  'signup user and redirect to cart': (client) => {
+  'signup user and redirect to profile': (browser) => {
+    browser
+      .setValue('input[type=email]', 'test@test.com')
+      .setValue('input[type=password]', 'password')
+      .click('button[type=submit]')
+      .waitForElementVisible('.navbar', 1000)
+      .getText('h1', function(response) {
+        this.assert.equal(response.value, 'Thank you for signing up')
+      })
 
+    browser.assert.urlEquals('/users/test/profile')
   },
 
-  'close': (client) => client.end()
+  'close': (browser) => browser.end()
 }
