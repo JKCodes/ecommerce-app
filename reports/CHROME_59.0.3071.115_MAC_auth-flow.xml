@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuites errors="0"
-            failures="0"
+<testsuites errors="1"
+            failures="1"
             tests="3">
 
   <testsuite name="auth-flow"
-    errors="0" failures="0" hostname="" id="" package="auth-flow" skipped="0"
-    tests="3" time="5.340" timestamp="Mon, 31 Jul 2017 23:30:50 GMT">
+    errors="1" failures="1" hostname="" id="" package="auth-flow" skipped="1"
+    tests="3" time="6.023" timestamp="Mon, 31 Jul 2017 23:42:14 GMT">
   
-    <testcase name="get to signup page" classname="auth-flow" time="5.235" assertions="3">
+    <testcase name="get to signup page" classname="auth-flow" time="3.712" assertions="3">
 
     
 
@@ -16,15 +16,37 @@
     
     </testcase>
   
-    <testcase name="signup user and redirect to cart" classname="auth-flow" time="0.002000" assertions="0">
-    </testcase>
-  
-    <testcase name="close" classname="auth-flow" time="0.1030" assertions="0">
+    <testcase name="signup user and redirect to profile" classname="auth-flow" time="2.311" assertions="2">
+
+      <failure message="Failed [equal]: ({ additionalInformation: '\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities [{applicationCacheEnabled=false,  == 'Thank you for signing up')">    at Object.&lt;anonymous&gt; (/Users/Joe/Desktop/Boot Camp/e-commerce-app/client/tests/auth-flow.js:20:21)</failure>
+
+    
     </testcase>
   
 
   
+    <system-err>
+      ERROR: Unable to locate element: &quot;h1&quot; using: css selector
+    at Object.signup user and redirect to profile (/Users/Joe/Desktop/Boot Camp/e-commerce-app/client/tests/auth-flow.js:19:8)
+    at Module.call (/Users/Joe/.npm-packages/lib/node_modules/nightwatch/lib/runner/module.js:62:34)
+    at /Users/Joe/.npm-packages/lib/node_modules/nightwatch/lib/runner/testcase.js:70:29
+    at _fulfilled (/Users/Joe/.npm-packages/lib/node_modules/nightwatch/node_modules/q/q.js:834:54)
+    at self.promiseDispatch.done (/Users/Joe/.npm-packages/lib/node_modules/nightwatch/node_modules/q/q.js:863:30)
+    at Promise.promise.promiseDispatch (/Users/Joe/.npm-packages/lib/node_modules/nightwatch/node_modules/q/q.js:796:13)
+    at /Users/Joe/.npm-packages/lib/node_modules/nightwatch/node_modules/q/q.js:556:49
+    at runSingle (/Users/Joe/.npm-packages/lib/node_modules/nightwatch/node_modules/q/q.js:137:13)
+    at flush (/Users/Joe/.npm-packages/lib/node_modules/nightwatch/node_modules/q/q.js:125:13)
+    at _combinedTickCallback (internal/process/next_tick.js:67:7)
+    </system-err>
+  
 
+  
+    
+    <testcase
+      name="close" classname="auth-flow">
+      <skipped />
+    </testcase>
+    
   
   </testsuite>
 </testsuites>

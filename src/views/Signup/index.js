@@ -1,5 +1,17 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-const Signup = () => <form className="signup_form"></form>
+import { signup } from '../../redux/modules/Auth/actions';
 
-export default Signup;
+class Signup extends Component {
+
+  render() {
+    return (
+      <div className="signup">
+        <h3>Create an Account</h3>
+      </div>
+    )
+  }
+}
+
+export default Signup
