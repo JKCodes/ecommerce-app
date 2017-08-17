@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import {
   BrowserRouter as Router,
   Route,
@@ -6,10 +7,12 @@ import {
   NavLink
 } from 'react-router-dom'
 import { StyleSheet, css } from 'aphrodite';
-
+import { fetchCurrentUser } from '../redux/modules/Auth/actions'
 import Home from '../views/Home';
 import Signup from '../views/Signup';
 import NotFound from '../views/NotFound';
+
+const API_URL = process.env.REACT_APP_API_URL;
 
 const styles = StyleSheet.create({
   navbar: {
@@ -30,6 +33,11 @@ const styles = StyleSheet.create({
 })
 
 class App extends Component {
+
+  componentDidMount() {
+    this.props.fetchCurrentUser()
+  }
+
   render() {
     return (
       <Router>
@@ -49,16 +57,23 @@ class App extends Component {
             </div>
           </div>
           <hr />
-
+          { 
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/signup" component={Signup} />
             <Route component={NotFound} />
           </Switch>
+          }
         </div>
       </Router>
     );
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return ({
+    auth: state.auth
+  })
+}
+
+export default connect(mapStateToProps, { fetchCurrentUser })(App);
