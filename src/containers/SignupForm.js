@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { updateSignupFormData, createUser } from '../redux/modules/SignupForm/actions'
+import { updateSignupFormData } from '../redux/modules/SignupForm/actions'
+import { signup } from '../redux/modules/Auth/actions'
+import { withRouter } from 'react-router-dom';
 
 class SignupForm extends Component {
 
@@ -14,8 +16,7 @@ class SignupForm extends Component {
 
   handleOnSubmit = (e) => {
     e.preventDefault()
-
-    this.props.createUser(this.props.signupFormData)
+    this.props.signup(this.props.signupFormData, this.props.history)
   }
 
   render() {
@@ -64,7 +65,7 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, { 
-  updateSignupFormData, 
-  createUser
-})(SignupForm);
+export default withRouter(connect(mapStateToProps, { 
+  updateSignupFormData,
+  signup
+})(SignupForm));
