@@ -11,8 +11,8 @@ import { fetchCurrentUser } from '../redux/modules/Auth/actions'
 import Home from '../views/Home';
 import Signup from '../views/Signup';
 import NotFound from '../views/NotFound';
-
-const API_URL = process.env.REACT_APP_API_URL;
+import Login from '../views/Login';
+import Logout from '../view/Logout';
 
 const styles = StyleSheet.create({
   navbar: {
@@ -39,6 +39,7 @@ class App extends Component {
   }
 
   render() {
+    const loggedIn = Object.keys(this.props.auth.currentUser).length !== 0
     return (
       <Router>
         <div className="App">
@@ -54,16 +55,30 @@ class App extends Component {
                 to="/signup">
                 Signup
               </NavLink>
+              { !loggedIn &&
+                <NavLink 
+                  className={css(styles.navlink)}
+                  to="/login">
+                  Login
+                </NavLink>
+              }
+              { loggedIn &&
+                <NavLink 
+                  className={css(styles.navlink)}
+                  to="/logout">
+                  Logout
+                </NavLink>
+              }
             </div>
           </div>
           <hr />
-          { 
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/signup" component={Signup} />
+            { !loggedIn && <Route exact path="/login" component={Login} /> }
+            { loggedIn && <Route exact path="/logout" component={Logout} /> }
             <Route component={NotFound} />
           </Switch>
-          }
         </div>
       </Router>
     );
