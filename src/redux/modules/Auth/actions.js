@@ -16,6 +16,30 @@ export const setCurrentUser = (user) => {
   }
 }
 
+export const fetchCurrentUser = () => {
+  const token = localStorage.getItem('e.shop.token')
+    if (token) {
+      return dispatch => {
+        fetch(`${API_URL}/auth/fetch`, {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ token: token })
+        })
+        .then(response => response.json())
+        .then(userData => {
+          // dispatch(setCurrentUser(userData));
+        })
+      }
+    } else {
+      return {
+        type: "@@init"
+      }
+    }
+}
+
 export const signup = (userDetails, history) => {
   return dispatch => {
     dispatch(authenticationRequest())
