@@ -6,12 +6,12 @@ import {
 import thunk from 'redux-thunk';
 import { reducer as form } from 'redux-form';
 import auth from '../modules/Auth/reducer';
-import signup from '../modules/SignupForm/reducer';
+import signupFormData from '../modules/SignupForm/reducer';
 
 const reducers = combineReducers({
   form,
   auth,
-  signup
+  signupFormData
 })
 const middleware = [thunk]
 
