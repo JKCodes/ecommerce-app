@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { updateSignupFormData } from '../redux/modules/SignupForm/actions'
+import { updateSignupFormData, createUser } from '../redux/modules/SignupForm/actions'
 
 class SignupForm extends Component {
 
@@ -12,10 +12,16 @@ class SignupForm extends Component {
     this.props.updateSignupFormData(currentSignupFormData)
   }
 
+  handleOnSubmit = (e) => {
+    e.preventDefault()
+
+    this.props.createUser(this.props.signupFormData)
+  }
+
   render() {
     const { email, password, password_confirmation } = this.props.signupFormData
     return (
-      <form>
+      <form onSubmit={this.handleOnSubmit}>
         <div>
           <label htmlFor="email">Email:</label>
           <input
@@ -45,6 +51,8 @@ class SignupForm extends Component {
             value={password_confirmation}
           />
         </div>
+
+        <button type="submit">Create New Account</button>
       </form>
     )
   }
@@ -56,4 +64,7 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, { updateSignupFormData} )(SignupForm);
+export default connect(mapStateToProps, { 
+  updateSignupFormData, 
+  createUser
+})(SignupForm);
