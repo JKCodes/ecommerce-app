@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
 class App extends Component {
 
   componentDidMount() {
-    // this.props.fetchCurrentUser()
+    this.props.fetchCurrentUser()
   }
 
   render() {
@@ -50,12 +50,14 @@ class App extends Component {
                 to="/">
                 Home
               </NavLink>
-              <NavLink 
-                className={css(styles.navlink)}
-                to="/signup">
-                Signup
-              </NavLink>
-              { !loggedIn &&
+              { !loggedIn &&  
+                <NavLink 
+                  className={css(styles.navlink)}
+                  to="/signup">
+                  Signup
+                </NavLink>
+              }
+              { !loggedIn &&  
                 <NavLink 
                   className={css(styles.navlink)}
                   to="/login">
@@ -74,7 +76,7 @@ class App extends Component {
           <hr />
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/signup" component={Signup} />
+            { !loggedIn && <Route exact path="/signup" component={Signup} /> }
             { !loggedIn && <Route exact path="/login" component={Login} /> }
             { loggedIn && <Route exact path="/logout" component={Logout} /> }
             <Route component={NotFound} />
