@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
 class App extends Component {
 
   componentDidMount() {
-    this.props.fetchCurrentUser()
+    // this.props.fetchCurrentUser()
   }
 
   render() {
