@@ -22,13 +22,20 @@ export const addItem = (itemDetails, history) => {
     .then(response => response.json())
     .then(body => {
       if (!body.error) {
-        dispatch(getAllItems())
+        dispatch(addNewItem(body))
         history.push('/items')
       } else {
           Object.keys(body.error).forEach((key) => console.log(`${key} ${body.error[key]}`))
       }
     })
   }}
+
+const addNewItem = (item) => {
+  return {
+    type: 'ADD_NEW_ITEM_SUCCESS',
+    item
+  }
+}
 
 export const getAllItems = () => {
   return dispatch => {
