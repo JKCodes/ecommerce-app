@@ -22,6 +22,7 @@ import ItemShow from './ItemShow';
 
 const styles = StyleSheet.create({
   navbar: {
+    position: 'relative',
     width: '100%',
     background: '#18121e',
     padding: '6px'
@@ -35,6 +36,31 @@ const styles = StyleSheet.create({
       background: '#fff',
       color: '#18121e'
     }
+  },
+
+  logout: {
+    position: 'absolute',
+    right: '6px',
+    top: '0'
+  },
+
+  login: {
+    position: 'absolute',
+    right: '6px',
+    top: '0'
+  },
+
+  signup: {
+    position: 'absolute',
+    right: '40px',
+    top: '0'
+  },
+
+  mainContainer: {
+    width: '75%',
+    padding: '30px 50px',
+    margin: '0 auto',
+    boxShadow: '3px 3px 5px 6px #ccc'
   }
 })
 
@@ -60,21 +86,21 @@ class App extends Component {
               </NavLink>
               { !loggedIn &&  
                 <NavLink 
-                  className={css(styles.navlink)}
+                  className={css(styles.navlink, styles.signup)}
                   to="/signup">
                   Signup
                 </NavLink>
               }
               { !loggedIn &&  
                 <NavLink 
-                  className={css(styles.navlink)}
+                  className={css(styles.navlink, styles.login)}
                   to="/login">
                   Login
                 </NavLink>
               }
               { loggedIn &&
                 <NavLink 
-                  className={css(styles.navlink)}
+                  className={css(styles.navlink, styles.logout)}
                   to="/logout">
                   Logout
                 </NavLink>
@@ -92,17 +118,19 @@ class App extends Component {
             </div>
           </div>
           <hr />
-          <Switch>
-            <Route exact path="/" component={Home} />
-            { !loggedIn && <Route exact path="/signup" component={Signup} /> }
-            { !loggedIn && <Route exact path="/login" component={Login} /> }
-            { loggedIn && <Route exact path="/logout" component={Logout} /> }
-            <Route exact path="/categories" component={Category} />
-            <Route exact path="/items" component={Item} />
-            <Route exact path="/items/new" component={ItemNew} />
-            <Route exact path="/items/:itemId" component={ItemShow} />
-            <Route component={NotFound} />
-          </Switch>
+          <div className={css(styles.mainContainer)}>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              { !loggedIn && <Route exact path="/signup" component={Signup} /> }
+              { !loggedIn && <Route exact path="/login" component={Login} /> }
+              { loggedIn && <Route exact path="/logout" component={Logout} /> }
+              <Route exact path="/categories" component={Category} />
+              <Route exact path="/items" component={Item} />
+              <Route exact path="/items/new" component={ItemNew} />
+              <Route exact path="/items/:itemId" component={ItemShow} />
+              <Route component={NotFound} />
+            </Switch>
+          </div>
         </div>
       </Router>
     );
