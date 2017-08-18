@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { updateLoginFormData } from '../redux/modules/LoginForm/actions';
 
 class LoginForm extends Component {
 
   render() {
-    const { email, password } = {}
+    const { email, password } = this.props.loginFormData
 
     return (
       <form onSubmit={this.handleOnSubmit}>
@@ -33,4 +35,12 @@ class LoginForm extends Component {
   }
 }
 
-export default LoginForm;
+const mapStateToProps = (state) => {
+  return {
+    loginFormData: state.loginFormData
+  }
+}
+
+export default connect(mapStateToProps, { 
+  updateLoginFormData
+})(LoginForm);
