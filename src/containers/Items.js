@@ -25,6 +25,21 @@ const styles = StyleSheet.create({
       background: '#444',
       color: "cyan"
     }
+  },
+
+  listItem: {
+    display: 'inline-block',
+    textDecoration: 'none',
+    color: 'black',
+    textAlign: 'center',
+    margin: '22px 1% 0px',
+    width: '31%',
+    background: '#fff',
+    ':hover': {
+      background: 'lightGray'
+    },
+    boxShadow: '1px 1px 2px 2px #ccc',
+    borderRadius: '10%'
   }
 })
 
@@ -33,7 +48,7 @@ class Items extends Component {
     return (
       <div>
         <Link className={css(styles.link)} to={`/items/new`}>Add a new Item</Link>
-        {this.props.items.map(item => <Link key={item.id} to={`/items/${item.id}`}><ItemCard item={item} /></Link>)}
+        {this.props.items.map(item => <Link className={css(styles.listItem)} key={item.id} to={`/items/${item.id}`}><ItemCard item={item} /></Link>)}
       </div>
     )
   }
