@@ -10,6 +10,7 @@ import signupFormData from '../modules/SignupForm/reducer';
 import loginFormData from '../modules/LoginForm/reducer';
 import categories from '../modules/Categories/reducer';
 import items from '../modules/Items/reducer'
+import newItemFormData from '../modules/NewItemForm/reducer'
 
 const reducers = combineReducers({
   form,
@@ -17,7 +18,8 @@ const reducers = combineReducers({
   signupFormData,
   loginFormData,
   categories,
-  items
+  items,
+  newItemFormData
 })
 const middleware = [thunk]
 

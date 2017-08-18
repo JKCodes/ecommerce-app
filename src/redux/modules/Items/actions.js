@@ -11,9 +11,7 @@ const setItems = (items) => {
 }
 
 export const addItem = () => {
-  return {
-    type: 'GEEE'
-  }
+  alert('adding new item!')
 }
 
 export const getAllItems = () => {
