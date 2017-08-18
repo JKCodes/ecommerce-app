@@ -12,7 +12,7 @@ import Home from '../views/Home';
 import Signup from '../views/Signup';
 import NotFound from '../views/NotFound';
 import Login from '../views/Login';
-import Logout from '../view/Logout';
+import Logout from '../views/Logout';
 
 const styles = StyleSheet.create({
   navbar: {
