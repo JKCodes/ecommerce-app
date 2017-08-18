@@ -1,6 +1,6 @@
 export const updateLoginFormData = (loginFormData) => {
   return {
-    type: 'UPDATED_FORM_DATA',
+    type: 'UPDATED_LOGIN_FORM_DATA',
     loginFormData
   }
 }
