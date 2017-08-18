@@ -8,6 +8,8 @@ import {
 } from 'react-router-dom'
 import { StyleSheet, css } from 'aphrodite';
 import { fetchCurrentUser } from '../redux/modules/Auth/actions'
+import { getAllItems } from '../redux/modules/Items/actions'
+import { getAllCategories } from '../redux/modules/Categories/actions'
 import Home from '../views/Home';
 import Signup from '../views/Signup';
 import NotFound from '../views/NotFound';
@@ -40,6 +42,8 @@ class App extends Component {
 
   componentDidMount() {
     this.props.fetchCurrentUser()
+    this.props.getAllCategories()
+    this.props.getAllItems()
   }
 
   render() {
@@ -111,4 +115,4 @@ const mapStateToProps = (state) => {
   })
 }
 
-export default connect(mapStateToProps, { fetchCurrentUser })(App);
+export default connect(mapStateToProps, { fetchCurrentUser, getAllCategories, getAllItems })(App);
