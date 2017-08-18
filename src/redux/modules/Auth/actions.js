@@ -1,7 +1,7 @@
 import 'isomorphic-fetch';
 import { reset } from 'redux-form'
 
-const API_URL = process.env.REACT_APP_API_URL;
+const API_URL = "https://hidden-sea-49555.herokuapp.com/api/v1";
 
 export const authenticationRequest = () => {
   return {
