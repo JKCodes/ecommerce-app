@@ -4,9 +4,10 @@ import { StyleSheet, css } from 'aphrodite';
 
 const styles = StyleSheet.create({
   center: {
-    margin: '0 auto',
+    margin: '0 auto 40px',
     textAlign: 'center'
   },
+
   adjustH2: {
     marginTop: '10px',
     marginBottom: '0',
