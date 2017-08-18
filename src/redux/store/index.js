@@ -8,12 +8,16 @@ import { reducer as form } from 'redux-form';
 import auth from '../modules/Auth/reducer';
 import signupFormData from '../modules/SignupForm/reducer';
 import loginFormData from '../modules/LoginForm/reducer';
+import categories from '../modules/Categories/reducer';
+import items from '../modules/Items/reducer'
 
 const reducers = combineReducers({
   form,
   auth,
   signupFormData,
-  loginFormData
+  loginFormData,
+  categories,
+  items
 })
 const middleware = [thunk]
 
