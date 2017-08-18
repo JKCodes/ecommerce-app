@@ -19,6 +19,9 @@ export default (state = initialState, action) => {
         currentUser: action.user
       }
 
+    case 'RESET_SESSION':
+      return initialState
+      
     default:
       return state;
   }

@@ -1,5 +1,5 @@
 import 'isomorphic-fetch';
-import { reset, SubmissionError } from 'redux-form'
+import { reset } from 'redux-form'
 
 const API_URL = process.env.REACT_APP_API_URL;
 
@@ -13,6 +13,13 @@ export const setCurrentUser = (user) => {
   return {
     type: 'AUTHENTICATION_SUCCESS',
     user
+  }
+}
+
+export const logout = () => {
+  localStorage.removeItem('e.shop.token')
+  return {
+    type: 'RESET_SESSION'
   }
 }
 
