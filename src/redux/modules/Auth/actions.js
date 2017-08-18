@@ -58,7 +58,8 @@ export const signup = (userDetails, history) => {
         localStorage.setItem('e.shop.token', body.token);
         dispatch(setCurrentUser(body.user));
         dispatch(reset('signup'));
-        history.replace(`/users/${slug}/profile`);        
+        history.push('/')
+        // history.replace(`/users/${slug}/profile`);        
       } else {
           Object.keys(body.errors).forEach((key) => console.log(`${key} ${body.errors[key]}`))
       }
