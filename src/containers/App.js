@@ -13,6 +13,8 @@ import Signup from '../views/Signup';
 import NotFound from '../views/NotFound';
 import Login from '../views/Login';
 import Logout from '../views/Logout';
+import Category from '../views/Category';
+import Item from '../views/Item';
 
 const styles = StyleSheet.create({
   navbar: {
