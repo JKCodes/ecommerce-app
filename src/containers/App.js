@@ -15,6 +15,8 @@ import Login from '../views/Login';
 import Logout from '../views/Logout';
 import Category from '../views/Category';
 import Item from '../views/Item';
+import ItemNew from './ItemNew';
+import ItemShow from './ItemShow';
 
 const styles = StyleSheet.create({
   navbar: {
@@ -93,6 +95,8 @@ class App extends Component {
             { loggedIn && <Route exact path="/logout" component={Logout} /> }
             <Route exact path="/categories" component={Category} />
             <Route exact path="/items" component={Item} />
+            <Route exact path="/items/new" component={ItemNew} />
+            <Route exact path="/items/:itemId" component={ItemShow} />
             <Route component={NotFound} />
           </Switch>
         </div>
