@@ -40,10 +40,10 @@ export const fetchCurrentUser = () => {
     }
 }
 
-export const signup = (userDetails, history) => {
+const authenticateDispatcher = (userDetails, history, url) => {
   return dispatch => {
     dispatch(authenticationRequest())
-    return fetch(`${API_URL}/users`, {
+    return fetch(url, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -54,18 +54,23 @@ export const signup = (userDetails, history) => {
     .then(response => response.json())
     .then(body => {
       if (!body.errors) {
-        const slug = body.user.email.split('@')[0];
+        // const slug = body.user.email.split('@')[0];
         localStorage.setItem('e.shop.token', body.token);
         dispatch(setCurrentUser(body.user));
-        dispatch(reset('signup'));
+        dispatch(reset('login'));
         history.push('/')
         // history.replace(`/users/${slug}/profile`);        
       } else {
           Object.keys(body.errors).forEach((key) => console.log(`${key} ${body.errors[key]}`))
       }
     })
-    .catch(err => {
-      throw new SubmissionError(err)
-    })
   }
+}
+
+export const login = (userDetails, history) => {
+  return authenticateDispatcher(userDetails, history, `${API_URL}/auth`)
+}
+
+export const signup = (userDetails, history) => {
+  return authenticateDispatcher(userDetails, history, `${API_URL}/users`)
 }
