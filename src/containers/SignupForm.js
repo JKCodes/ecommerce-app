@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
 
   button: {
     width: '200px',
-    fontSize: '1.3em',
+    fontSize: '1.1em',
     textAlign: 'center',
     margin: '30px auto',
     paddingTop: '10px',
@@ -62,7 +62,7 @@ class SignupForm extends Component {
     return (
       <form className={css(styles.form)} onSubmit={this.handleOnSubmit}>
         <div>
-          <label className={css(styles.label)} htmlFor="email">Email:</label>
+          <label className={css(styles.label)} htmlFor="email">Email</label>
           <input
             className={css(styles.input)}
             type="email"
@@ -73,7 +73,7 @@ class SignupForm extends Component {
         </div>
 
         <div>
-          <label className={css(styles.label)} htmlFor="password">Password:</label>
+          <label className={css(styles.label)} htmlFor="password">Password</label>
           <input
             className={css(styles.input)}
             type="password"
@@ -84,7 +84,7 @@ class SignupForm extends Component {
         </div>
 
         <div>
-          <label className={css(styles.label)} htmlFor="password_confirmation">Password Confirmation:</label>
+          <label className={css(styles.label)} htmlFor="password_confirmation">Password Confirmation</label>
           <input
             className={css(styles.input)}
             type="password"
