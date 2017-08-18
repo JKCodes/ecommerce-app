@@ -2,8 +2,8 @@ const initialState = []
 
 export default (state = initialState, action) => {
   switch(action.type) {
-    case 'TEMP':
-      return state
+    case 'GET_CATEGORIES_SUCCESS':
+      return action.categories;
     default:
       return state;
   }
