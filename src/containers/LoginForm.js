@@ -63,7 +63,7 @@ class LoginForm extends Component {
     return (
       <form className={css(styles.form)} onSubmit={this.handleOnSubmit}>
         <div>
-          <label htmlFor="email">Email</label>
+          <label className={css(styles.label)} htmlFor="email">Email</label>
           <input
             className={css(styles.input)}
             type="email"
@@ -74,7 +74,7 @@ class LoginForm extends Component {
         </div>
 
         <div>
-          <label htmlFor="password">Password</label>
+          <label className={css(styles.label)} htmlFor="password">Password</label>
           <input
             className={css(styles.input)}
             type="password"
