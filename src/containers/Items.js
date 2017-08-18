@@ -1,19 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { getAllItems } from '../redux/modules/Items/actions'
 import ItemCard from '../components/ItemCard'
 
 class Items extends Component {
-
-  componentDidMount() {
-    this.props.getAllItems()
-  }
-
-  handleOnClick = (e) => {
-    console.log("hi")
-  }
-
   render() {
     return (
       <div>
@@ -30,4 +20,4 @@ const mapStateToProps = (state) => {
   })
 }
 
-export default connect(mapStateToProps, { getAllItems })(Items);
+export default connect(mapStateToProps)(Items);
