@@ -1,13 +1,21 @@
 import React, { Component } from 'react';
 
 import SignupForm from '../../containers/SignupForm';
+import { StyleSheet, css } from 'aphrodite';
+
+const styles = StyleSheet.create({
+  h1: {
+    textAlign: 'center'
+  }
+})
+
 
 class Signup extends Component {
 
   render() {
     return (
       <div className="signup">
-        <h3>Create an Account</h3>
+        <h1 className={css(styles.h1)}>Create an Account</h1>
         <SignupForm />
       </div>
     )
