@@ -11,7 +11,6 @@ const styles = StyleSheet.create({
     textDecoration: 'none',
     width: '150px',
     fontSize: '1.3em',
-    color: 'black',
     textAlign: 'center',
     margin: '0 auto',
     paddingTop: '5px',
