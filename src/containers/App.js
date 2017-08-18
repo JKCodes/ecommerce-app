@@ -22,7 +22,9 @@ import ItemShow from './ItemShow';
 
 const styles = StyleSheet.create({
   navbar: {
-    position: 'relative',
+    position: 'fixed',
+    top: '0',
+    left: '0',
     width: '100%',
     background: '#18121e',
     padding: '6px'
@@ -40,26 +42,26 @@ const styles = StyleSheet.create({
 
   logout: {
     position: 'absolute',
-    right: '6px',
+    right: '24px',
     top: '0'
   },
 
   login: {
     position: 'absolute',
-    right: '6px',
+    right: '24px',
     top: '0'
   },
 
   signup: {
     position: 'absolute',
-    right: '40px',
+    right: '80px',
     top: '0'
   },
 
   mainContainer: {
     width: '75%',
     padding: '30px 50px',
-    margin: '0 auto',
+    margin: '40px auto',
     boxShadow: '3px 3px 5px 6px #ccc'
   }
 })
