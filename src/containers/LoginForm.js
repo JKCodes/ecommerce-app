@@ -57,5 +57,6 @@ const mapStateToProps = (state) => {
 }
 
 export default withRouter(connect(mapStateToProps, { 
-  updateLoginFormData
+  updateLoginFormData,
+  login
 })(LoginForm));
