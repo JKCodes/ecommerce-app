@@ -1,8 +1,23 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { updateLoginFormData } from '../redux/modules/LoginForm/actions';
+import { login } from '../redux/modules/Auth/actions'
+import { withRouter } from 'react-router-dom';
 
 class LoginForm extends Component {
+
+  handleOnChange = (e) => {
+    const { name, value } = e.target;
+    const currentLoginFormData = Object.assign({}, this.props.loginFormData, {
+      [name]:value
+    })
+    this.props.updateLoginFormData(currentLoginFormData)
+  }
+
+  handleOnSubmit = (e) => {
+    e.preventDefault()
+    this.props.login(this.props.loginFormData, this.props.history)
+  }
 
   render() {
     const { email, password } = this.props.loginFormData
@@ -41,6 +56,6 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, { 
+export default withRouter(connect(mapStateToProps, { 
   updateLoginFormData
-})(LoginForm);
+})(LoginForm));
