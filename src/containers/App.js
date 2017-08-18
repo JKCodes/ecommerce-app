@@ -71,6 +71,16 @@ class App extends Component {
                   Logout
                 </NavLink>
               }
+              <NavLink 
+                className={css(styles.navlink)}
+                to="/categories">
+                Categories
+              </NavLink>
+              <NavLink 
+                className={css(styles.navlink)}
+                to="/items">
+                Items
+              </NavLink>
             </div>
           </div>
           <hr />
@@ -79,6 +89,8 @@ class App extends Component {
             { !loggedIn && <Route exact path="/signup" component={Signup} /> }
             { !loggedIn && <Route exact path="/login" component={Login} /> }
             { loggedIn && <Route exact path="/logout" component={Logout} /> }
+            <Route exact path="/categories" component={Category} />
+            <Route exact path="/items" component={Item} />
             <Route component={NotFound} />
           </Switch>
         </div>
