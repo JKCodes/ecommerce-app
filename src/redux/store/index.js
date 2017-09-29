@@ -20,7 +20,8 @@ const reducers = combineReducers({
   loginFormData,
   categories,
   items,
-  newItemFormData
+  newItemFormData,
+  cart
 })
 const middleware = [thunk]
 
