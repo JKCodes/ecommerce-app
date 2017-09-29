@@ -61,12 +61,10 @@ const authenticateDispatcher = (userDetails, history, url) => {
     .then(response => response.json())
     .then(body => {
       if (!body.errors) {
-        // const slug = body.user.email.split('@')[0];
         localStorage.setItem('e.shop.token', body.token);
         dispatch(setCurrentUser(body.user));
         dispatch(reset('login'));
         history.push('/')
-        // history.replace(`/users/${slug}/profile`);        
       } else {
           Object.keys(body.errors).forEach((key) => console.log(`${key} ${body.errors[key]}`))
       }
