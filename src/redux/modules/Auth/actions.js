@@ -64,6 +64,7 @@ const authenticateDispatcher = (userDetails, history, url) => {
         localStorage.setItem('e.shop.token', body.token);
         dispatch(setCurrentUser(body.user));
         dispatch(reset('login'));
+        dispatch(reset('signup'))
         history.push('/')
       } else {
           Object.keys(body.errors).forEach((key) => console.log(`${key} ${body.errors[key]}`))
