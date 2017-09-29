@@ -11,6 +11,7 @@ import loginFormData from '../modules/LoginForm/reducer';
 import categories from '../modules/Categories/reducer';
 import items from '../modules/Items/reducer'
 import newItemFormData from '../modules/NewItemForm/reducer'
+import cart from '../modules/Cart/reducer'
 
 const reducers = combineReducers({
   form,
