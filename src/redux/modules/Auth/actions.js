@@ -1,5 +1,5 @@
 import 'isomorphic-fetch';
-import { reset } from 'redux-form'
+import { reset } from 'redux-form';
 
 const API_URL = process.env.REACT_APP_API_URL;
 
@@ -17,14 +17,14 @@ export const setCurrentUser = (user) => {
 }
 
 export const logout = () => {
-  localStorage.removeItem('e.shop.token')
+  localStorage.removeItem('e.shop.token');
   return {
     type: 'RESET_SESSION'
   }
 }
 
 export const fetchCurrentUser = () => {
-  const token = localStorage.getItem('e.shop.token')
+  const token = localStorage.getItem('e.shop.token');
     if (token) {
       return dispatch => {
         fetch(`${API_URL}/auth/fetch`, {
@@ -34,11 +34,11 @@ export const fetchCurrentUser = () => {
             'Content-Type': 'application/json'
           },
           body: JSON.stringify({ token: token })
-        })
+        });
         .then(response => response.json())
         .then(userData => {
           dispatch(setCurrentUser(userData));
-        })
+        });
       }
     } else {
       return {
@@ -49,7 +49,7 @@ export const fetchCurrentUser = () => {
 
 const authenticateDispatcher = (userDetails, history, url) => {
   return dispatch => {
-    dispatch(authenticationRequest())
+    dispatch(authenticationRequest());
     return fetch(url, {
       method: 'POST',
       headers: {
@@ -68,7 +68,7 @@ const authenticateDispatcher = (userDetails, history, url) => {
           Object.keys(body.errors).forEach((key) => console.log(`${key} ${body.errors[key]}`))
       }
       dispatch(reset('login'));
-      dispatch(reset('signup'))
+      dispatch(reset('signup'));
     })
   }
 }
