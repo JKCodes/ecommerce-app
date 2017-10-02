@@ -34,7 +34,7 @@ export const fetchCurrentUser = () => {
             'Content-Type': 'application/json'
           },
           body: JSON.stringify({ token: token })
-        });
+        })
         .then(response => response.json())
         .then(userData => {
           dispatch(setCurrentUser(userData));
