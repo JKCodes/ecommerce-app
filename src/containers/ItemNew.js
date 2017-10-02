@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addItem } from '../redux/modules/Items/actions'
-import { updateNewItemFormData } from '../redux/modules/NewItemForm/actions'
 import { withRouter } from 'react-router-dom';
 import { StyleSheet, css } from 'aphrodite';
 
@@ -57,20 +56,28 @@ const styles = StyleSheet.create({
 
 class ItemNew extends Component {
 
+  constructor() {
+    super()
+
+    this.state = {
+      title: '',
+      inventory: '',
+      price: '',
+      category_id: ''
+    }
+  }
+
   handleOnChange = (e) => {
     const { name, value } = e.target;
-    console.log(this.props.newItemFormData)
-    const currentNewItemFormData = Object.assign({}, this.props.newItemFormData, {
+    
+    this.setState({
       [name]:value
     })
-    console.log(currentNewItemFormData)
-
-    this.props.updateNewItemFormData(currentNewItemFormData)
   }
 
   handleOnSubmit = (e) => {
     e.preventDefault()
-    this.props.addItem(this.props.newItemFormData, this.props.history)
+    this.props.addItem(this.state, this.props.history)
   }
 
   render() {
@@ -156,9 +163,7 @@ class ItemNew extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return {
-    newItemFormData: state.newItemFormData
-  }
+  return { }
 }
 
-export default withRouter(connect(mapStateToProps, { addItem, updateNewItemFormData })(ItemNew));
+export default withRouter(connect(mapStateToProps, { addItem })(ItemNew));

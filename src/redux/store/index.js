@@ -8,7 +8,6 @@ import { reducer as form } from 'redux-form';
 import auth from '../modules/Auth/reducer';
 import categories from '../modules/Categories/reducer';
 import items from '../modules/Items/reducer'
-import newItemFormData from '../modules/NewItemForm/reducer'
 import cart from '../modules/Cart/reducer'
 
 const reducers = combineReducers({
@@ -16,7 +15,6 @@ const reducers = combineReducers({
   auth,
   categories,
   items,
-  newItemFormData,
   cart
 })
 const middleware = [thunk]
