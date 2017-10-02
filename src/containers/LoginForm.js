@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { updateLoginFormData } from '../redux/modules/LoginForm/actions';
 import { login } from '../redux/modules/Auth/actions'
 import { withRouter } from 'react-router-dom';
 import { StyleSheet, css } from 'aphrodite';
@@ -44,21 +43,29 @@ const styles = StyleSheet.create({
 
 class LoginForm extends Component {
 
+  constructor() {
+    super()
+    
+    this.state = {
+      email: '',
+      password: ''
+    }
+  }
+
   handleOnChange = (e) => {
     const { name, value } = e.target;
-    const currentLoginFormData = Object.assign({}, this.props.loginFormData, {
+    this.setState({
       [name]:value
     })
-    this.props.updateLoginFormData(currentLoginFormData)
   }
 
   handleOnSubmit = (e) => {
     e.preventDefault()
-    this.props.login(this.props.loginFormData, this.props.history)
+    this.props.login(this.state, this.props.history)
   }
 
   render() {
-    const { email, password } = this.props.loginFormData
+    const { email, password } = this.state
 
     return (
       <form className={css(styles.form)} onSubmit={this.handleOnSubmit}>
@@ -91,12 +98,9 @@ class LoginForm extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return {
-    loginFormData: state.loginFormData
-  }
+  return { }
 }
 
-export default withRouter(connect(mapStateToProps, { 
-  updateLoginFormData,
+export default withRouter(connect(mapStateToProps, {
   login
 })(LoginForm));

@@ -7,7 +7,6 @@ import thunk from 'redux-thunk';
 import { reducer as form } from 'redux-form';
 import auth from '../modules/Auth/reducer';
 import signupFormData from '../modules/SignupForm/reducer';
-import loginFormData from '../modules/LoginForm/reducer';
 import categories from '../modules/Categories/reducer';
 import items from '../modules/Items/reducer'
 import newItemFormData from '../modules/NewItemForm/reducer'
@@ -17,7 +16,6 @@ const reducers = combineReducers({
   form,
   auth,
   signupFormData,
-  loginFormData,
   categories,
   items,
   newItemFormData,
