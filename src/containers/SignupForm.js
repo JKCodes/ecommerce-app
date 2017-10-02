@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { updateSignupFormData } from '../redux/modules/SignupForm/actions'
 import { signup } from '../redux/modules/Auth/actions'
 import { withRouter } from 'react-router-dom';
 import { StyleSheet, css } from 'aphrodite';
@@ -44,21 +43,31 @@ const styles = StyleSheet.create({
 
 class SignupForm extends Component {
 
+  constructor() {
+    super()
+
+    this.state = {
+      email: '',
+      password: '',
+      password_confirmation: ''
+    }
+  }
+
   handleOnChange = (e) => {
     const { name, value } = e.target;
-    const currentSignupFormData = Object.assign({}, this.props.signupFormData, {
+
+    this.setState({
       [name]:value
     })
-    this.props.updateSignupFormData(currentSignupFormData)
   }
 
   handleOnSubmit = (e) => {
     e.preventDefault()
-    this.props.signup(this.props.signupFormData, this.props.history)
+    this.props.signup(this.state, this.props.history)
   }
 
   render() {
-    const { email, password, password_confirmation } = this.props.signupFormData
+    const { email, password, password_confirmation } = this.state
     return (
       <form className={css(styles.form)} onSubmit={this.handleOnSubmit}>
         <div>
@@ -101,12 +110,9 @@ class SignupForm extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return {
-    signupFormData: state.signupFormData
-  }
+  return { }
 }
 
 export default withRouter(connect(mapStateToProps, { 
-  updateSignupFormData,
   signup
 })(SignupForm));

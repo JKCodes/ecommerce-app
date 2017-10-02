@@ -6,7 +6,6 @@ import {
 import thunk from 'redux-thunk';
 import { reducer as form } from 'redux-form';
 import auth from '../modules/Auth/reducer';
-import signupFormData from '../modules/SignupForm/reducer';
 import categories from '../modules/Categories/reducer';
 import items from '../modules/Items/reducer'
 import newItemFormData from '../modules/NewItemForm/reducer'
@@ -15,7 +14,6 @@ import cart from '../modules/Cart/reducer'
 const reducers = combineReducers({
   form,
   auth,
-  signupFormData,
   categories,
   items,
   newItemFormData,
