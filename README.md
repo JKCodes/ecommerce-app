@@ -11,9 +11,9 @@ Add overview info here
 $ npm install
 ```
 
-2. Either clone the Rails API or use an already deployed API for simplicity
+2. Clone the Rails API or skip to step 3 if you'd rather use an already deployed API for simplicity
 
-- Clone:  Visit [Rails API](https://github.com/JKCodes/ecommerce-app-api).  The Rails API uses PostgresSQL.
+* Clone [Rails API](https://github.com/JKCodes/ecommerce-app-api).  The Rails API uses PostgresSQL.
 
 
 * Create an .env file at the root directory of the React/Redux repo (not the Rails one)
@@ -28,16 +28,17 @@ REACT_APP_API_URL=#{YOUR_API_URL}/api/v1
 ```
 $ rails s
 ```
+* Skip to step 4
 
-2b. Use existing: Create an .env file at the root directory of the repo, and put the following line in the file.
+3. Skip to step 4 if you decided to clone the Rails API.  Create an .env file at the root directory of the repo, and put the following line in the file.
 
 ```
 REACT_APP_API_URL=https://hidden-sea-49555.herokuapp.com/api/v1
 ```
 
-Note that there will already be some data on the database if you choose to use an existing Rails API.
+* Note that there will already be some data on the database if you choose to use an existing Rails API.
 
-3. Then finally run npm start on the root directory of the React/Redux repo:
+4. Then finally run npm start on the root directory of the React/Redux repo:
 
 ```
 $ npm start
