@@ -43,3 +43,5 @@ REACT_APP_API_URL=https://hidden-sea-49555.herokuapp.com/api/v1
 ```
 $ npm start
 ```
+
+* Note that if you are already running the Rails API on port 3000, the app will ask you if you'd like to run it on different port.  Do so, and it should run on a different port (most likely 3001).
