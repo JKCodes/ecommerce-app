@@ -13,21 +13,17 @@ $ npm install
 
 2. Either clone the Rails API or use an already deployed API for simplicity
 
-- Clone:  Visit the link below
-
-[Rails API](https://github.com/JKCodes/ecommerce-app-api)
-
-The Rails API uses PostgresSQL.
+- Clone:  Visit [Rails API](https://github.com/JKCodes/ecommerce-app-api).  The Rails API uses PostgresSQL.
 
 
-- Create an .env file at the root directory of the React/Redux repo (not the Rails one)
+* Create an .env file at the root directory of the React/Redux repo (not the Rails one)
 Replace #{YOUR_API_URL} below with "http://localhost:3000" or whatever port you set it to.
 
 ```
 REACT_APP_API_URL=#{YOUR_API_URL}/api/v1
 ```
 
-- Now run the server in a different tab on the Rails repo.
+* Now run the server in a different tab on the Rails repo.
 
 ```
 $ rails s
