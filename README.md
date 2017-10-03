@@ -13,7 +13,7 @@ $ npm install
 
 2. Either clone the Rails API or use an already deployed API for simplicity
 
-2a. Clone:  Visit the link below
+  2a. Clone:  Visit the link below
 
 https://github.com/JKCodes/ecommerce-app-api
 
@@ -41,7 +41,7 @@ REACT_APP_API_URL=https://hidden-sea-49555.herokuapp.com/api/v1
 
 Note that there will already be some data on the database if you choose to use an existing Rails API.
 
-3. Then finally run npm start:
+3. Then finally run npm start on the root directory of the React/Redux repo:
 
 ```
 $ npm start
