@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import { login } from '../redux/modules/Auth/actions'
-import { withRouter } from 'react-router-dom';
-import { StyleSheet, css } from 'aphrodite';
+import { withRouter } from 'react-router-dom'
+import { StyleSheet, css } from 'aphrodite'
 
 const styles = StyleSheet.create({
   form: {
@@ -53,7 +53,7 @@ class LoginForm extends Component {
   }
 
   handleOnChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value } = e.target
     this.setState({
       [name]:value
     })
@@ -103,4 +103,4 @@ const mapStateToProps = (state) => {
 
 export default withRouter(connect(mapStateToProps, {
   login
-})(LoginForm));
+})(LoginForm))
