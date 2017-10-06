@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import { addItem } from '../redux/modules/Items/actions'
-import { withRouter } from 'react-router-dom';
-import { StyleSheet, css } from 'aphrodite';
+import { withRouter } from 'react-router-dom'
+import { StyleSheet, css } from 'aphrodite'
 
 const styles = StyleSheet.create({
   h1: {
@@ -68,7 +68,7 @@ class ItemNew extends Component {
   }
 
   handleOnChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value } = e.target
     
     this.setState({
       [name]:value
@@ -166,4 +166,4 @@ const mapStateToProps = (state) => {
   return { }
 }
 
-export default withRouter(connect(mapStateToProps, { addItem })(ItemNew));
+export default withRouter(connect(mapStateToProps, { addItem })(ItemNew))
