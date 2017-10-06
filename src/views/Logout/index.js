@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
-import LogoutForm from '../../containers/LogoutForm';
+import LogoutForm from '../../containers/LogoutForm'
 
-import { StyleSheet, css } from 'aphrodite';
+import { StyleSheet, css } from 'aphrodite'
 
 const styles = StyleSheet.create({
   h3: {
