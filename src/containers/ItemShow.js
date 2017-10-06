@@ -1,7 +1,7 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React from 'react'
+import { connect } from 'react-redux'
 
-import { StyleSheet, css } from 'aphrodite';
+import { StyleSheet, css } from 'aphrodite'
 
 const styles = StyleSheet.create({
   h1: {
@@ -56,6 +56,6 @@ const mapStateToProps = (state, ownProps) => {
   } else {
     return { item: {} }
   }
-};
+}
 
-export default connect(mapStateToProps)(ItemShow);
+export default connect(mapStateToProps)(ItemShow)
