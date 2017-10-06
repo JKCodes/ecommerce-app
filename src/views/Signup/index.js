@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
-import SignupForm from '../../containers/SignupForm';
-import { StyleSheet, css } from 'aphrodite';
+import SignupForm from '../../containers/SignupForm'
+import { StyleSheet, css } from 'aphrodite'
 
 const styles = StyleSheet.create({
   h1: {
