@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 
-import { StyleSheet, css } from 'aphrodite';
+import { StyleSheet, css } from 'aphrodite'
 
 const styles = StyleSheet.create({
   span: {
@@ -14,4 +14,4 @@ const CategoryItem = ({ category }) => (
   </div>
   )
 
-export default CategoryItem;
+export default CategoryItem
