@@ -1,24 +1,24 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import {
   BrowserRouter as Router,
   Route,
   Switch,
   NavLink
 } from 'react-router-dom'
-import { StyleSheet, css } from 'aphrodite';
+import { StyleSheet, css } from 'aphrodite'
 import { fetchCurrentUser } from '../redux/modules/Auth/actions'
 import { getAllItems } from '../redux/modules/Items/actions'
 import { getAllCategories } from '../redux/modules/Categories/actions'
-import Home from '../views/Home';
-import Signup from '../views/Signup';
-import NotFound from '../views/NotFound';
-import Login from '../views/Login';
-import Logout from '../views/Logout';
-import Category from '../views/Category';
-import Item from '../views/Item';
-import ItemNew from './ItemNew';
-import ItemShow from './ItemShow';
+import Home from '../views/Home'
+import Signup from '../views/Signup'
+import NotFound from '../views/NotFound'
+import Login from '../views/Login'
+import Logout from '../views/Logout'
+import Category from '../views/Category'
+import Item from '../views/Item'
+import ItemNew from './ItemNew'
+import ItemShow from './ItemShow'
 
 const styles = StyleSheet.create({
   navbar: {
@@ -135,7 +135,7 @@ class App extends Component {
           </div>
         </div>
       </Router>
-    );
+    )
   }
 }
 
@@ -145,4 +145,4 @@ const mapStateToProps = (state) => {
   })
 }
 
-export default connect(mapStateToProps, { fetchCurrentUser, getAllCategories, getAllItems })(App);
+export default connect(mapStateToProps, { fetchCurrentUser, getAllCategories, getAllItems })(App)
