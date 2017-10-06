@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import { logout } from '../redux/modules/Auth/actions'
-import { withRouter } from 'react-router-dom';
-import { StyleSheet, css } from 'aphrodite';
+import { withRouter } from 'react-router-dom'
+import { StyleSheet, css } from 'aphrodite'
 
 const styles = StyleSheet.create({
   button: {
@@ -38,4 +38,4 @@ const mapStateToProps = (state) => {
   return {}
 }
 
-export default withRouter(connect(mapStateToProps, { logout })(LogoutForm));
+export default withRouter(connect(mapStateToProps, { logout })(LogoutForm))
