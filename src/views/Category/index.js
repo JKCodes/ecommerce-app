@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
-import Categories from '../../containers/Categories';
+import Categories from '../../containers/Categories'
 
-import { StyleSheet, css } from 'aphrodite';
+import { StyleSheet, css } from 'aphrodite'
 
 const styles = StyleSheet.create({
   h1: {
