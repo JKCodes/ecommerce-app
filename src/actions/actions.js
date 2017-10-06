@@ -1,6 +1,6 @@
-import 'isomorphic-fetch';
+import 'isomorphic-fetch'
 
-const API_URL = process.env.REACT_APP_API_URL;
+const API_URL = process.env.REACT_APP_API_URL
 
 // Auth
 
@@ -18,14 +18,14 @@ export const setCurrentUser = (user) => {
 }
 
 export const logout = () => {
-  localStorage.removeItem('e.shop.token');
+  localStorage.removeItem('e.shop.token')
   return {
     type: 'RESET_SESSION'
   }
 }
 
 export const fetchCurrentUser = () => {
-  const token = localStorage.getItem('e.shop.token');
+  const token = localStorage.getItem('e.shop.token')
     if (token) {
       return dispatch => {
         fetch(`${API_URL}/auth/fetch`, {
@@ -38,8 +38,8 @@ export const fetchCurrentUser = () => {
         })
         .then(response => response.json())
         .then(userData => {
-          dispatch(setCurrentUser(userData));
-        });
+          dispatch(setCurrentUser(userData))
+        })
       }
     } else {
       return {
@@ -50,7 +50,7 @@ export const fetchCurrentUser = () => {
 
 const authenticateDispatcher = (userDetails, history, url) => {
   return dispatch => {
-    dispatch(authenticationRequest());
+    dispatch(authenticationRequest())
     return fetch(url, {
       method: 'POST',
       headers: {
@@ -62,14 +62,14 @@ const authenticateDispatcher = (userDetails, history, url) => {
     .then(response => response.json())
     .then(body => {
       if (!body.errors) {
-        localStorage.setItem('e.shop.token', body.token);
-        dispatch(setCurrentUser(body.user));
+        localStorage.setItem('e.shop.token', body.token)
+        dispatch(setCurrentUser(body.user))
         history.push('/')
       } else {
           Object.keys(body.errors).forEach((key) => console.log(`${key} ${body.errors[key]}`))
       }
-      dispatch(reset('login'));
-      dispatch(reset('signup'));
+      dispatch(reset('login'))
+      dispatch(reset('signup'))
     })
   }
 }
