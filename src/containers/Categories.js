@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import CategoryItem from '../components/CategoryItem'
-import { StyleSheet, css } from 'aphrodite';
+import { StyleSheet, css } from 'aphrodite'
 
 const styles = StyleSheet.create({
   button: {
@@ -38,4 +38,4 @@ const mapStateToProps = (state) => {
   })
 }
 
-export default connect(mapStateToProps)(Categories);
+export default connect(mapStateToProps)(Categories)
