@@ -6,8 +6,8 @@ module.exports = {
       .waitForElementVisible('.navbar', 1000)
       .click('a[href="/signup')
 
-    browser.assert.urlContains('signup');
-    browser.assert.cssClassPresent("form", "signup_form");
+    browser.assert.urlContains('signup')
+    browser.assert.cssClassPresent("form", "signup_form")
   },
 
   'signup user and redirect to profile': (browser) => {
