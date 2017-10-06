@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 
-import { StyleSheet, css } from 'aphrodite';
+import { StyleSheet, css } from 'aphrodite'
 
 const styles = StyleSheet.create({
   center: {
@@ -24,4 +24,4 @@ const Home = () => (
     <h2 className={css(styles.adjustH2)}>So, click on any of the Navigational links above to get started!</h2>
   </div>
 )
-export default Home;
+export default Home
