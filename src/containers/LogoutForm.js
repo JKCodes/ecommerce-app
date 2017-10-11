@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { logout } from '../redux/modules/Auth/actions'
+import { logout } from '../actions/actions'
 import { withRouter } from 'react-router-dom'
 import { StyleSheet, css } from 'aphrodite'
 
