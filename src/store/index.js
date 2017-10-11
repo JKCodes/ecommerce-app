@@ -5,10 +5,10 @@ import {
 } from 'redux';
 import thunk from 'redux-thunk';
 import { reducer as form } from 'redux-form';
-import auth from '../modules/Auth/reducer';
-import categories from '../modules/Categories/reducer';
-import items from '../modules/Items/reducer'
-import cart from '../modules/Cart/reducer'
+import auth from '../reducers/auth';
+import categories from '../reducers/categories';
+import items from '../reducers/items'
+import cart from '../reducers/cart'
 
 const reducers = combineReducers({
   form,
