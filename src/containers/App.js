@@ -7,9 +7,7 @@ import {
   NavLink
 } from 'react-router-dom'
 import { StyleSheet, css } from 'aphrodite'
-import { fetchCurrentUser } from '../redux/modules/Auth/actions'
-import { getAllItems } from '../redux/modules/Items/actions'
-import { getAllCategories } from '../redux/modules/Categories/actions'
+import { fetchCurrentUser, getAllItems, getAllCategories } from '../actions/actions'
 import Home from '../views/Home'
 import Signup from '../views/Signup'
 import NotFound from '../views/NotFound'

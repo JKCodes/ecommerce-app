@@ -68,8 +68,6 @@ const authenticateDispatcher = (userDetails, history, url) => {
       } else {
           Object.keys(body.errors).forEach((key) => console.log(`${key} ${body.errors[key]}`))
       }
-      dispatch(reset('login'))
-      dispatch(reset('signup'))
     })
   }
 }
