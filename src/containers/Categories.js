@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import CategoryItem from '../components/CategoryItem'
+import { Link } from 'react-router-dom'
 import { StyleSheet, css } from 'aphrodite'
 
 const styles = StyleSheet.create({
@@ -15,6 +16,26 @@ const styles = StyleSheet.create({
     },
     boxShadow: '1px 1px 2px 2px #ccc',
     borderRadius: '10%'
+  },
+
+  link: {
+    display: 'block',
+    textDecoration: 'none',
+    width: '200px',
+    fontSize: '1.3em',
+    textAlign: 'center',
+    margin: '0 auto 20px auto',
+    paddingTop: '5px',
+    paddingBottom: '5px',
+    border: '2px solid #444',
+    borderRadius: '15px',
+    background: 'cyan',
+    color: "#555",
+    boxShadow: '2px 2px 2px 2px #ccc',
+    ':hover': {
+      background: '#444',
+      color: "cyan"
+    }
   }
 })
 
@@ -26,6 +47,7 @@ class Categories extends Component {
   render() {
     return (
       <div>
+        <Link className={css(styles.link)} to={`/categories/new`}>Add a new category</Link>
         {this.props.categories.map(category => <button className={css(styles.button)} onClick={this.handleOnClick} key={category.id}><CategoryItem category={category} /></button>)}
       </div>
     )
