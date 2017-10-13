@@ -48,7 +48,6 @@ const ItemShow = ({ item }) => (
 
 
 const mapStateToProps = (state, ownProps) => {
-  console.log(state.items)
   const item = state.items.find(item => item.id === +ownProps.match.params.itemId)
 
   if (item) {
