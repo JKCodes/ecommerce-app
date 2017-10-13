@@ -98,6 +98,35 @@ export const getAllCategories = () => {
   }
 }
 
+export const addCategory = (categoryDetails, history) => {
+  return dispatch => {
+    return fetch(`${API_URL}/categories`, {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ category: categoryDetails })
+    })
+    .then(response => response.json())
+    .then(body => {
+      if (!body.error) {
+        console.log(body)
+        dispatch(addNewCategory(body))
+        history.push('/categories')
+      } else {
+          Object.keys(body.error).forEach((key) => console.log(`${key} ${body.error[key]}`))
+      }
+    })
+  }}
+
+const addNewCategory = (category) => {
+  return {
+    type: 'ADD_NEW_CATEGORY_SUCCESS',
+    category
+  }
+}
+
 // Items
 
 const setItems = (items) => {
