@@ -34,6 +34,12 @@ const styles = StyleSheet.create({
     borderRadius: '5px'
   },
 
+  textarea: {
+    width: '200px',
+    borderRadius: '5px',
+    resize: "none"
+  },
+
   button: {
     width: '200px',
     fontSize: '1.3em',
@@ -109,6 +115,7 @@ class ItemNew extends Component {
               <textarea
                 className={css(styles.textarea)}
                 type="text"
+                rows="10"
                 name="description"
                 onChange={this.handleOnChange}
               >
