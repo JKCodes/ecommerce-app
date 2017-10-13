@@ -104,6 +104,16 @@ class ItemNew extends Component {
                 onChange={this.handleOnChange}
               />
             </div>
+            <div>
+              <label className={css(styles.label)} htmlFor="description">Item Description</label>
+              <textarea
+                className={css(styles.textarea)}
+                type="text"
+                name="description"
+                onChange={this.handleOnChange}
+              >
+              </textarea>
+            </div>
             <div>  
               <label className={css(styles.label)} htmlFor="inventory">Inventory</label>
               <input
