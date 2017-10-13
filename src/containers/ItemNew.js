@@ -9,17 +9,9 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   },
 
-  mainContainer: {
-    overflow: 'hidden',
-    padding: '40px'
-  },
-
   form: {
-    float: 'left'
-  },
-
-  reference: {
-    float: 'right'
+    margin: '0 auto',
+    width: '205px'
   },
 
   label: {
@@ -87,10 +79,21 @@ class ItemNew extends Component {
   }
 
   render() {
-    return (
-      <div>
-        <h1 className={css(styles.h1)}>Create A New Item</h1>
-        <div className={css(styles.mainContainer)}>
+    if (this.props.categories.length === 0) {
+      this.props.history.push('/items')
+      return (
+        <div></div>
+      )
+    } else {
+      var options = []
+
+      for (var category in this.props.categories) {
+        options.push(<option value={category.id}>{category.title}</option>)
+      }
+
+      return (
+        <div>
+          <h1 className={css(styles.h1)}>Create A New Item</h1>
           <form className={css(styles.form)} onSubmit={this.handleOnSubmit}>
             <div>
               <label className={css(styles.label)} htmlFor="title">Name</label>
@@ -141,55 +144,27 @@ class ItemNew extends Component {
                 onChange={this.handleOnChange}
               />
             </div>
-            <div>  
-              <label className={css(styles.label)} htmlFor="Category Id">Category Id</label>
-              <input
-                className={css(styles.input)}
-                type="number"
+            <div>
+              <label className={css(styles.label)} htmlFor="Category">Category</label>    
+              <select 
                 name="category_id"
-                min="1"
-                max="22"
-                step="1"
+                value={this.state.category_id}
                 onChange={this.handleOnChange}
-              />
+              >
+                {this.props.categories.map((category, index) => <option key={index} value={category.id}>{category.title}</option>)}
+              </select>
             </div>
+
             <button className={css(styles.button)} type="submit">Create new Item</button>
           </form>
-          <div className={css(styles.reference)}>
-            <h3>Category Id Reference</h3>
-            <ol>
-              <li>Food</li>
-              <li>Clothing</li>
-              <li>Electronics</li>
-              <li>Movies</li>
-              <li>Music</li>
-              <li>Books</li>
-              <li>Office</li>
-              <li>Furniture</li>
-              <li>Appliances</li>
-              <li>Shoes</li>
-              <li>Jewelry</li>
-              <li>Toys</li>
-              <li>Video Games</li>
-              <li>Pharmacy</li>
-              <li>Household</li>
-              <li>Health and Beauty</li>
-              <li>Sports</li>
-              <li>Fitness</li>
-              <li>Outdoors</li>
-              <li>Auto</li>
-              <li>Crafts</li>
-              <li>Party Supplies</li>
-            </ol>
-          </div>
         </div>
-      </div>
-    )
+      )
+    }
   }
 }
 
 const mapStateToProps = (state) => {
-  return { }
+  return { categories: state.categories }
 }
 
 export default withRouter(connect(mapStateToProps, { addItem })(ItemNew))
