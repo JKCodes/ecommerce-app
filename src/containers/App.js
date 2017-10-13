@@ -14,6 +14,7 @@ import NotFound from '../views/NotFound'
 import Login from '../views/Login'
 import Logout from '../views/Logout'
 import Category from '../views/Category'
+import CategoryNew from './CategoryNew'
 import Item from '../views/Item'
 import ItemNew from './ItemNew'
 import ItemShow from './ItemShow'
@@ -125,8 +126,9 @@ class App extends Component {
               { !loggedIn && <Route exact path="/login" component={Login} /> }
               { loggedIn && <Route exact path="/logout" component={Logout} /> }
               <Route exact path="/categories" component={Category} />
+              { loggedIn && <Route exact path="/categories/new" component={CategoryNew} /> }
               <Route exact path="/items" component={Item} />
-              <Route exact path="/items/new" component={ItemNew} />
+              { loggedIn && <Route exact path="/items/new" component={ItemNew} /> }
               <Route exact path="/items/:itemId" component={ItemShow} />
               <Route component={NotFound} />
             </Switch>
