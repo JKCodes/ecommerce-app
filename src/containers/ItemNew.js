@@ -95,6 +95,15 @@ class ItemNew extends Component {
                 onChange={this.handleOnChange}
               />
             </div>
+            <div>
+              <label className={css(styles.label)} htmlFor="img_url">URL for Item</label>
+              <input
+                className={css(styles.input)}
+                type="text"
+                name="img_url"
+                onChange={this.handleOnChange}
+              />
+            </div>
             <div>  
               <label className={css(styles.label)} htmlFor="inventory">Inventory</label>
               <input
