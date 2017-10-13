@@ -4,7 +4,6 @@ import { StyleSheet, css } from 'aphrodite'
 
 const styles = StyleSheet.create({
   h3: {
-    textAlign: 'center',
     marginTop: '5px',
     marginBottom: '0'
   }
@@ -12,8 +11,21 @@ const styles = StyleSheet.create({
 
 const NotFound = () => (
   <div>
-    <h3 className={css(styles.h3)}>The requested resource could not be found.</h3>
-    <h3 className={css(styles.h3)}>Please note that some resources required the user to be logged in first</h3>
+    <h3 className={css(styles.h3)}>The requested resource is unavailable due to one of the following reasons:</h3>
+    <ol>
+      <li>
+        <h3>The requested resource is no longer available.</h3>
+      </li>
+      <li>
+        <h3>The manually inputted resource is invalid</h3>
+      </li>
+      <li>
+        <h3>The requested resource is only available to logged in users</h3>
+      </li>
+      <li>
+        <h3>You are not authorized to access this resource under your current user privileges</h3>
+      </li>
+    </ol>
   </div>
 )
 export default NotFound;
