@@ -83,7 +83,7 @@ class ItemNew extends Component {
   render() {
     return (
       <div>
-        <h1 className={css(styles.h1)}>Create a new Item</h1>
+        <h1 className={css(styles.h1)}>Create A New Item</h1>
         <div className={css(styles.mainContainer)}>
           <form className={css(styles.form)} onSubmit={this.handleOnSubmit}>
             <div>
