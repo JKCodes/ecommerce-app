@@ -2,11 +2,11 @@ import {
   createStore,
   applyMiddleware,
   combineReducers
-} from 'redux';
-import thunk from 'redux-thunk';
-import { reducer as form } from 'redux-form';
-import auth from '../reducers/auth';
-import categories from '../reducers/categories';
+} from 'redux'
+import thunk from 'redux-thunk'
+import { reducer as form } from 'redux-form'
+import auth from '../reducers/auth'
+import categories from '../reducers/categories'
 import items from '../reducers/items'
 import cart from '../reducers/cart'
 
