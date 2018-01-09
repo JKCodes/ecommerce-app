@@ -1,4 +1,47 @@
-import 'isomorphic-fetch'
+import constants from '../constants';
+import { APIManager } from '../utils';
+
+const getRequest = (path, params, actionType) => {
+	return (dispatch) => 
+		APIManager.get(path, params)
+		.then(response => {
+
+			const payload = response.results || response.result || response.user
+
+			dispatch({
+				type: actionType,
+				payload: payload,
+				params: params
+			})
+
+			return response
+		})
+		.catch(err => {
+
+			throw err
+		})
+}
+
+const postRequest = (path, params, actionType) => {
+	return (dispatch) => 
+		APIManager.post(path, params)
+		.then(response => {
+			const payload = response.results || response.result || response.user
+
+			dispatch({
+				type: actionType,
+				payload: payload,
+				params: params
+			})
+
+			return response
+		})
+		.catch(err => {
+			throw err
+		})
+}
+
+
 
 const API_URL = process.env.REACT_APP_API_URL
 
